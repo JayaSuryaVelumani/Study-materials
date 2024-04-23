@@ -9,11 +9,14 @@
 
 <button (click)="readme()">click me</button>
 
+
 <!--*ngIf Statment example-->
 <!-- <div *ngIf="showMessage" [ngStyle]='{color:colorName}'>the message is shown</div> -->
 <!--*ngIf with else Statment example-->
 <div *ngIf="showMessage; else showElseMessage" [ngStyle]='{color:colorName}'>Message shown </div>
 <ng-template #showElseMessage>shown else message</ng-template>
+
+
 
 <h5>ngSwitch example</h5>
 
@@ -25,9 +28,12 @@
 <div *ngSwitchDefault>The fault value </div>
 </div>
 
+
+
 <h6>ngfor example</h6>
 
-  <table class="table">
+
+  <!-- <table class="table">
     <th>Index</th>
     <th>UserId</th>
     <th>UserName</th>
@@ -45,9 +51,7 @@
       <td>{{o}}</td>
     </tr>
 
-</table>
-
-
+</table> -->
 
 
 <h2>ngSwitch example</h2>
@@ -55,8 +59,41 @@
   Error occurs in the template of component AppComponent
 </div>
 
-
+<!-- This is one way Data Binding (componet=(Component.ts) to template=(Component.html) / componet going to template ) -->
 <h3>ngClass example</h3>
 <div [ngClass]="[clsName ,clsName2]"> The example of NgClass</div>
-<div [ngClass]="{'one':true, 'two':true}"> The example of NgClass with conditions</div>
+<div [ngClass]="{'one':true, 'two':false}"> The example of NgClass with conditions</div>
+
+
+<!-- Interpolation step 2 -->
+<div [ngClass]="{'main':true, 'sub':false}">
+  <div [ngClass]="'mainClass'">{{subTitle}}</div>
+  </div>
+  <div [ngClass]="{'main':false, 'sub':true}">
+  <div [ngClass]="'subClass'">{{step}}</div>
+</div>
+
+<!--  Interpolation=(CALLING THE OBJECT)  -->
+<div>{{inter.titleId}}</div>
+<div>{{inter.sub}}</div>        
+<div>{{inter.status}}</div>
+
+<!-- PROPERTY BINDING -->
+<div [ngStyle]="{'color':ColorValue}">This is the Property Binding</div>
+
+<p [innerHTML]="subTitle"></p>
+
+<div [ngClass]="'pb'">Setting class property via Property Binding</div>
+
+<input [placeholder]="placeHolderValue">
+
+<!-- This is property binding with that exsiting i have added attribute buinding-->
+<a [href]="hrefval" [attr.updataedLink]="updated">Google</a>
+
+<!-- EVENT BINDING -->
+<h4>SwitchEvent</h4>
+<button (click)="showAlert(10)">Alewrt Message</button>
+
 <router-outlet />
+
+
