@@ -28,31 +28,21 @@
 <div *ngSwitchDefault>The fault value </div>
 </div>
 
-
-
 <h6>ngfor example</h6>
 
-
-   <table class="table"> 
+<!-- <table class="table">  
+  <tr>
     <th>Index</th>
     <th>UserId</th>
     <th>UserName</th>
-    <th>First</th>
-    <th>Last</th>
-    <th>Even</th>
-    <th>Odd</th>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-
-</table> 
-
+   
+  </tr>
+  <tr *ngFor="let user of userId; index as i">
+    <td>{{i}}</td>
+    <td>{{user.userid}}</td>
+    <td>{{user.username}}</td>
+  </tr>
+</table> -->
 
 <h2>ngSwitch example</h2>
 <div [ngStyle]="{'color':ColorValue, 'background-color':bgColorVal}">
@@ -94,6 +84,30 @@
 <h4>SwitchEvent</h4>
 <button (click)="showAlert(10)">Alewrt Message</button>
 
+<!-- TWO WAY BINDING -->
+<h5>TWO WAY BINDING</h5>
+<input [(ngModel)]="firstName"  />
+<button (click)="readFirstName()">Read FirstName</button>
+<div>{{firstName}}</div>
+
+<!-- PIPE -->
+<!-- BUILT IN PIPES -->
+
+<!-- LOWER AND UPPER CASE PIPE -->
+<div>{{pipe.pipeUsername | lowercase}} ; {{pipe.pipeType | uppercase}}</div>   
+<!-- CURRANCY PIPE  -->
+<!-- <div>{{pipe.PipeCurrancy | currency:'USD':'code'}}</div> -->
+<!-- DATE PIPE -->
+<div>{{pipe.pipeDate | date:'DD MMMM YY'}}</div>
+<!-- JSON PIPE -->
+<code>{{pipe | json }}</code>
+
+<!-- PARAMETRIZED PIPE -->
+<div>{{pipe.pipeDate | date:'shortDate'}}</div>
+<div>{{pipe.PipeCurrancy | currency:'INR':'INR':'3.0-1'}}</div>
+
+<!-- CHAINING PIPE -->
+<div>{{pipe.pipeDate | date:'MMMM' | uppercase }}</div>
 <router-outlet />
 
 

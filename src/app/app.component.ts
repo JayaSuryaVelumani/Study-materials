@@ -66,4 +66,26 @@ updated='https://youtube.com';
     console.log("inside alert");
     alert('Alert is success'+ id);
   }
+
+ // <!-- TWO WAY BINDING -->
+
+  firstName="";
+
+  //<!-- PIPE -->
+  pipe={
+    pipeUsername:'Surya',
+    pipeId:25,
+    PipeCurrancy:12000.67,
+    pipeType:'arc',
+    pipeDate:'12/3/2024',
+
+  }
+
+
+  readFirstName(){
+    console.log(this.firstName);
+  }
+
+
+
 }
