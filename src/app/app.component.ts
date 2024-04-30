@@ -22,8 +22,9 @@ export class AppComponent {
   mainClass='main';
   subClass='sub';
 
-
+//ngSwitch example
 SwitchValue='one';
+
 
 user=[
   {id:1, name:'Surya'},   //Array of objects
@@ -31,7 +32,7 @@ user=[
 ]
 
 
-
+//ngfor example
 userId=[
   {userid:10,username:'cody'},
   {userid:20,username:'cena'},
@@ -86,6 +87,24 @@ updated='https://youtube.com';
     console.log(this.firstName);
   }
 
+  //CUSTOM PIPES
+//  example 1 and 2
+  // cus={
+  //   cityName:'Coimbatore',
+  //   cityCode:'CBE',
+  //   }
 
+  cus=[{
+    cityName:'Coimbatore',
+    cityCode:'CBE',
+    },
+    {
+      cityName:'Bangalore',
+      cityCode:'KA',
+      },
+      {
+        cityName:'Chennai',
+        cityCode:'CH',
+        }]
 
 }

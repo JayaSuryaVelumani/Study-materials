@@ -8,13 +8,16 @@ import { AuthorizeComponent } from './authorize/authorize.component';
 import { LoginComponent } from './login/login.component';
 import { TaskComponent } from './task/task.component';
 import { TodoModule } from './todo/todo.module';
+import { HighlightPipe } from './highlight.pipe';
+import { HashLocationStrategy, LocationStrategy, PathLocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthorizeComponent,
     LoginComponent,
-    TaskComponent
+    TaskComponent,
+    HighlightPipe
   ],
   imports: [
     BrowserModule,
@@ -23,7 +26,10 @@ import { TodoModule } from './todo/todo.module';
     TodoModule
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+
+    //HashLocationStrategy or PathLocationStrategy u can use
+    { provide:LocationStrategy,useClass:HashLocationStrategy}
   ],
   bootstrap: [AppComponent]
 })

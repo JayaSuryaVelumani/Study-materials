@@ -12,7 +12,7 @@
 
 <!--*ngIf Statment example-->
 <!-- <div *ngIf="showMessage" [ngStyle]='{color:colorName}'>the message is shown</div> -->
-<!--*ngIf with else Statment example-->
+<!-- *ngIf with else Statment example -->
 <div *ngIf="showMessage; else showElseMessage" [ngStyle]='{color:colorName}'>Message shown </div>
 <ng-template #showElseMessage>shown else message</ng-template>
 
@@ -28,6 +28,10 @@
 <div *ngSwitchDefault>The fault value </div>
 </div>
 
+<h2>ngSwitch example</h2>
+<div [ngStyle]="{'color':ColorValue, 'background-color':bgColorVal}">
+  Error occurs in the template of component AppComponent
+</div>
 <h6>ngfor example</h6>
 
 <!-- <table class="table">  
@@ -44,15 +48,12 @@
   </tr>
 </table> -->
 
-<h2>ngSwitch example</h2>
-<div [ngStyle]="{'color':ColorValue, 'background-color':bgColorVal}">
-  Error occurs in the template of component AppComponent
-</div>
 
+<!-- ---------------------------------------------------------------------------------------- -->
 <!-- This is one way Data Binding (componet=(Component.ts) to template=(Component.html) / componet going to template ) -->
 <h3>ngClass example</h3>
 <div [ngClass]="[clsName ,clsName2]"> The example of NgClass</div>
-<div [ngClass]="{'one':true, 'two':false}"> The example of NgClass with conditions</div>
+<div [ngClass]="{'one':true,'two':false}"> The example of NgClass with conditions</div>
 
 
 <!-- Interpolation step 2 -->
@@ -83,12 +84,15 @@
 <!-- EVENT BINDING -->
 <h4>SwitchEvent</h4>
 <button (click)="showAlert(10)">Alewrt Message</button>
+<!-- ---------------------------------------------------------------------------------------- -->
 
 <!-- TWO WAY BINDING -->
 <h5>TWO WAY BINDING</h5>
 <input [(ngModel)]="firstName"  />
 <button (click)="readFirstName()">Read FirstName</button>
 <div>{{firstName}}</div>
+
+<!-- ---------------------------------------------------------------------------------------- -->
 
 <!-- PIPE -->
 <!-- BUILT IN PIPES -->
@@ -108,6 +112,21 @@
 
 <!-- CHAINING PIPE -->
 <div>{{pipe.pipeDate | date:'MMMM' | uppercase }}</div>
+<!-- ---------------------------------------------------------------------------------------- -->
+
+<!-- CUSTOM PIPE -->
+<!-- example-1 -->
+<!-- <div>{{cus.cityName |  highlight:cus.cityName }}</div> -->
+
+<!-- example-2 -->
+<!-- <div>{{ cus.cityName  | highlight: cus.cityName: cus.cityCode }}</div> -->
+
+<ul>
+  <li *ngFor="let usersss of cus">
+    <div [innerHTML]="usersss.cityCode |  highlight:usersss.cityCode "></div>
+  </li>
+</ul>
+
 <router-outlet />
 
 
